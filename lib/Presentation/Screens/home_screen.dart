@@ -75,6 +75,10 @@ class _HomePageState extends State<HomePage> {
               final provider =
                   Provider.of<ThemeProvider>(context, listen: false);
               provider.toggleTheme(themeProvider.isDarkMode ? true : false);
+
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("Change the theme of app"),
+              ));
             },
             icon: Icon(
               themeProvider.isDarkMode ? Icons.dark_mode : Icons.light_mode,
